@@ -9,18 +9,11 @@ export default function SelectedCollection() {
   const [loading, setLoading] = useState(true)
 
   async function fetchSelectedFeature() {
-    try {
-      const { data } = await axios.get('https://remote-internship-api-production.up.railway.app/selectedCollection');
-      const content = data.data;
-      console.log(content)
-      setFeature(content)
-      setLoading(false)
-    }
-    catch (e) {
-      console.log(e)
-      setLoading(false)
-    }
-
+    const { data } = await axios.get('https://remote-internship-api-production.up.railway.app/selectedCollection');
+    const content = data.data;
+    console.log(content)
+    setFeature(content)
+    setLoading(false)
   }
 
   useEffect(() => {
