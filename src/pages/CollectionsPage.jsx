@@ -1,45 +1,51 @@
-import React, { useEffect } from "react";
-import SelectedCollection from "../components/home/SelectedCollection";
-import { Link } from "react-router-dom";
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Card from "../components/Card";
+import Skeleton from "../components/ui/Skeleton";
 export default function CollectionsPage() {
+  const [collections, setCollections] = useState([])
+  const [load, setLoad] = useState(12)
+  const [loading, setLoading] = useState(true)
+  async function fetchCollections() {
+    const { data } = await axios.get('https://remote-internship-api-production.up.railway.app/collections')
+    const list = data.data
+    setCollections(list)
+    setLoading(false)
+  }
   useEffect(() => {
     window.scrollTo(0, 0);
+    setLoading(true)
+    fetchCollections()
   }, []);
-
+  function loadMore() {
+    setLoad(prev => prev + 6)
+  }
   return (
     <div className="container">
       <div className="row">
         <h1 className="collections-page__title">Collections</h1>
         <div className="collections__body">
-          {new Array(12).fill(0).map((_, index) => (
-            <div className="collection-column">
-              <Link to="/collection" key={index} className="collection">
-                <img
-                  src="https://i.seadn.io/gcs/files/a5414557ae405cb6233b4e2e4fa1d9e6.jpg?auto=format&dpr=1&w=1920"
-                  alt=""
-                  className="collection__img"
-                />
-                <div className="collection__info">
-                  <h3 className="collection__name">Bored Ape Kennel Club</h3>
-                  <div className="collection__stats">
-                    <div className="collection__stat">
-                      <span className="collection__stat__label">Floor</span>
-                      <span className="collection__stat__data">0.46 ETH</span>
-                    </div>
-                    <div className="collection__stat">
-                      <span className="collection__stat__label">
-                        Total Volume
-                      </span>
-                      <span className="collection__stat__data">281K ETH</span>
-                    </div>
+          {loading ?
+            Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} style={{ display: 'flex', flexWrap: 'wrap', width: '16%' }}>
+                <Skeleton width="100%" height="200px" borderRadius="8px" />
+                <div style={{ padding: "12px 0" }}>
+                  <Skeleton width="60%" height="1.2rem" borderRadius="4px" />
+                  <div style={{ display: "flex", gap: "12px", marginTop: "8px" }}>
+                    <Skeleton width="80px" height="1rem" borderRadius="4px" />
+                    <Skeleton width="80px" height="1rem" borderRadius="4px" />
                   </div>
                 </div>
-              </Link>
-            </div>
-          ))}
+              </div>
+            ))
+            : collections.slice(0, load).map((collection) => (
+              <Card key={collection.collectionId} collection={collection} />
+            ))}
         </div>
-        <button className="collections-page__button">Load more</button>
+        {
+          load < collections.length &&
+          <button className="collections-page__button" onClick={loadMore}>Load more</button>
+        }
       </div>
     </div>
   );
