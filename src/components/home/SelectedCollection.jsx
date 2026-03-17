@@ -11,7 +11,6 @@ export default function SelectedCollection() {
   async function fetchSelectedFeature() {
     const { data } = await axios.get('https://remote-internship-api-production.up.railway.app/selectedCollection');
     const content = data.data;
-    console.log(content)
     setFeature(content)
     setLoading(false)
   }
