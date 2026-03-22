@@ -3,12 +3,9 @@ import VerifiedIcon from "../../assets/verified.png";
 import TrendingCollection from "../../assets/trending-collection.avif";
 import { Link } from "react-router-dom";
 import axios from "axios";
-<<<<<<< HEAD
-=======
 import Skeleton from "../ui/Skeleton";
 
 
->>>>>>> jair-trendingNFTs
 export default function Trending() {
   const [trends, setTrends] = useState([]);
   const [loading, setLoading] = useState(true);
