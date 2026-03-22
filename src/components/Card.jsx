@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Card = ({ collection }) => {
     return (
-        <div className="collection-column " key={collection.collectionId}>
-            <Link to={`/collection/${collection.collectionId}`} className="collection">
+        <div className="collection-column " key={collection.creatorId}>
+            <Link to={`/collection/${collection.id}`} className="collection">
                 <img
                     src={collection.imageLink}
                     alt=""

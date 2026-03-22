@@ -29,7 +29,7 @@ export default function CollectionsPage() {
           {loading ?
             <CollectionPageSkeleton />
             : collections.slice(0, load).map((collection) => (
-              <Card key={collection.collectionId} collection={collection} />
+              <Card key={collection.creatorId} collection={collection} />
             ))}
         </div>
         {
