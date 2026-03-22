@@ -85,7 +85,7 @@ export default function UserPage() {
             <div className="row user-items__row">
               <div className="user-items__header">
                 <div className="user-items__header__left">
-                  <span className="user-items__header__text">163 items</span>
+                  <span className="user-items__header__text">{userItems?.length} items</span>
                 </div>
                 <select className="user-items__header__sort" onChange={(e) => setSortPrices(e.target.value)}>
                   <option value="">Recently purchased</option>
