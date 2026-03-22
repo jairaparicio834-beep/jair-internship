@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../components/Card";
-import CollectionPageSkeleton from "../components/ui/CollectionPageSkeleton";
+import CollectionsPageSkeleton from "../components/ui/CollectionPageSkeleton";
+import CardSkeleton from "../components/ui/CardSkeleton";
 export default function CollectionsPage() {
   const [collections, setCollections] = useState([])
   const [load, setLoad] = useState(12)
@@ -26,7 +27,7 @@ export default function CollectionsPage() {
         <h1 className="collections-page__title">Collections</h1>
         <div className="collections__body">
           {loading ?
-            <CollectionPageSkeleton />
+            <CardSkeleton />
             : collections.slice(0, load).map((collection) => (
               <Card key={collection.creatorId} collection={collection} />
             ))}
