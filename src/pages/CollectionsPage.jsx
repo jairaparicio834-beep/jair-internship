@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../components/Card";
-
 import CollectionPageSkeleton from "../components/ui/CollectionPageSkeleton";
 export default function CollectionsPage() {
   const [collections, setCollections] = useState([])
