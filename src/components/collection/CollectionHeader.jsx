@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function CollectionHeader() {
+export default function CollectionHeader({ user }) {
   return (
     <header
       style={{
-        backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2)), 
-        url('https://i.seadn.io/gcs/files/cbeed39f76506b4baf71005d7127d0df.png?auto=format&dpr=1&w=1920')`,
+        backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2)), url(${user?.imageLink})`,
       }}
       id="collection-header"
     >
@@ -14,18 +13,18 @@ export default function CollectionHeader() {
         <div className="collection-header__content">
           <div className="collection-header__left">
             <img
-              src="https://i.seadn.io/gcs/files/2d036c8c2bed042a1588622c3173677f.png?auto=format&dpr=1&w=256"
+              src={user?.logo}
               alt=""
               className="collection-header__img"
             />
-            <div className="collection-header__name">Meebits</div>
-            <Link to={'/user'} className="collection-header__author">C352B5</Link>
+            <div className="collection-header__name">{user?.title}</div>
+            <Link to={`/user/${user?.creatorId}`} className="collection-header__author">{user?.creator}</Link>
           </div>
           <div className="collection-header__right">
             <div className="collection-header__columns">
               <div className="collection-header__column">
                 <span className="collection-header__column__data">
-                  <span className="semibold">181,714</span> ETH
+                  <span className="semibold">{user?.totalVolume}</span> ETH
                 </span>
                 <span className="collection-header__column__label">
                   Total volume
@@ -33,7 +32,7 @@ export default function CollectionHeader() {
               </div>
               <div className="collection-header__column">
                 <span className="collection-header__column__data">
-                  <span className="semibold">0.55</span> ETH
+                  <span className="semibold">{Number(user?.floor).toFixed(2)}</span> ETH
                 </span>
                 <span className="collection-header__column__label">
                   Floor price
@@ -41,7 +40,7 @@ export default function CollectionHeader() {
               </div>
               <div className="collection-header__column">
                 <span className="collection-header__column__data">
-                  <span className="semibold">0.5154</span> ETH
+                  <span className="semibold">{user?.bestOffer}</span> ETH
                 </span>
                 <span className="collection-header__column__label">
                   Best offer
@@ -49,13 +48,13 @@ export default function CollectionHeader() {
               </div>
               <div className="collection-header__column">
                 <span className="collection-header__column__data">
-                  <span className="semibold">1%</span>
+                  <span className="semibold">{user?.listed}%</span>
                 </span>
                 <span className="collection-header__column__label">Listed</span>
               </div>
               <div className="collection-header__column">
                 <span className="collection-header__column__data">
-                  <span className="semibold">6,452 (32%)</span>
+                  <span className="semibold">{user?.owners}</span>
                 </span>
                 <span className="collection-header__column__label">
                   Owners (Unique)

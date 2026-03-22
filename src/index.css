@@ -514,6 +514,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+
 }
 
 .collection-column {
@@ -524,7 +525,7 @@ html {
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #dddddd;
+  border: 1px solid hsl(0, 0%, 87%);
   text-decoration: none;
   color: black;
   display: block;
@@ -581,6 +582,20 @@ html {
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 32px;
+  height: 32px;
+  color: black;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Footer */
