@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import Skeleton from "../ui/Skeleton";
+
 export default function SelectedCollection() {
   const [feature, setFeature] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -14,7 +15,6 @@ export default function SelectedCollection() {
     setFeature(content)
     setLoading(false)
   }
-
   useEffect(() => {
     setLoading(true)
     fetchSelectedFeature()
