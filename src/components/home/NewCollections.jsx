@@ -23,9 +23,9 @@ export default function NewCollections() {
   return (
     <section id="new-collections">
       <div className="container">
-        <div className="row">
+        <div className="row" data-aos="fade-up">
           <h2 className="new-collections__title">New Collections</h2>
-          <div className="new-collections__body">
+          <div className="new-collections__body" data-aos="fade-up">
             <Swiper
               modules={[Navigation]}
               loop={true}
