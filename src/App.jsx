@@ -16,8 +16,13 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/collections" element={<CollectionsPage />} />
         <Route path="/collection/:id" element={<CollectionPage />} />
+<<<<<<< HEAD
         <Route path="/item" element={<ItemPage />} />
         <Route path="/user/:id" element={<UserPage />} />
+=======
+        <Route path="/item/:id" element={<ItemPage />} />
+        <Route path="/user" element={<UserPage />} />
+>>>>>>> jair-item-details
       </Routes>
       <Footer />
     </Router>
