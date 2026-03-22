@@ -16,7 +16,7 @@ function App() {
         <Route path="/collections" element={<CollectionsPage />} />
         <Route path="/collection" element={<CollectionPage />} />
         <Route path="/item" element={<ItemPage />} />
-        <Route path="/user" element={<UserPage />} />
+        <Route path="/user/:id" element={<UserPage />} />
       </Routes>
       <Footer />
     </Router>

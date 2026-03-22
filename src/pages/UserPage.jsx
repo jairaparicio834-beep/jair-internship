@@ -1,12 +1,19 @@
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 export default function UserPage() {
+  const { id } = useParams()
+  async function fetchUser() {
+    const { data } = await axios.get(`https://remote-internship-api-production.up.railway.app/user/${id}`)
+    console.log(data);
+  }
+  console.log(id)
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetchUser()
   }, []);
 
   return (
