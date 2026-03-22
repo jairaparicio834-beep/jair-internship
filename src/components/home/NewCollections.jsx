@@ -12,7 +12,7 @@ export default function NewCollections() {
   const [loading, setLoading] = useState(true)
   async function fetchCollections() {
     const { data } = await axios.get('https://remote-internship-api-production.up.railway.app/newCollections')
-    const collections = data.data
+    const collections = data.data;
     setCards(collections)
     setLoading(false)
   }
@@ -25,7 +25,7 @@ export default function NewCollections() {
       <div className="container">
         <div className="row" data-aos="fade-up">
           <h2 className="new-collections__title">New Collections</h2>
-          <div className="new-collections__body" data-aos="fade-up">
+          <div className="new-collections__body">
             <Swiper
               modules={[Navigation]}
               loop={true}

@@ -26,9 +26,9 @@ export default function PopularCollections() {
   return (
     <section id="popular-collections">
       <div className="container">
-        <div className="row">
+        <div className="row" data-aos="fade-up" >
           <h2 className="popular-collections__title">Popular Collections</h2>
-          <div className="popular-collections__body">
+          <div className="popular-collections__body" data-aos="fade-up">
             <Swiper
               modules={[Navigation]}
               loop={true}
