@@ -2,7 +2,7 @@ import React from "react";
 import VerifiedIcon from "../../assets/verified.png";
 import TrendingCollection from "../../assets/trending-collection.avif";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 export default function Trending() {
   return (
     <section id="trending">
