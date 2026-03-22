@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import ItemPage from "./pages/ItemPage";
 import UserPage from "./pages/UserPage";
+<<<<<<< HEAD
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -21,6 +22,18 @@ function App() {
     });
   }, []);
 >>>>>>> jair-popular-collection
+=======
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
+function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,  // animation duration in ms
+      offset: 200,
+    })
+  }, [])
+>>>>>>> jair-trendingNFTs
   return (
     <Router>
       <Nav />
