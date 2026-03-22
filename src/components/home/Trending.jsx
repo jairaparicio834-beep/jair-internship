@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Skeleton from "../ui/Skeleton";
 
+
 export default function Trending() {
   const [trends, setTrends] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,14 +23,15 @@ export default function Trending() {
   return (
     <section id="trending">
       <div className="container">
-        <div className="row trending__row">
+        <div className="row trending__row" >
           <div className="trending__header">
             <h2 className="trending__header__title">Trending NFTs</h2>
             <Link className="trending__header__button" to={"/collections"}>
               View All
             </Link>
           </div>
-          <div className="trending__body">
+          <div className="trending__body" data-aos="fade-up"
+          >
             <div className="trending-column">
               <div className="trending-column__header">
                 <div className="trending-column__header__rank">#</div>

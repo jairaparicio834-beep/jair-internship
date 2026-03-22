@@ -6,8 +6,16 @@ import HomePage from "./pages/HomePage";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import ItemPage from "./pages/ItemPage";
 import UserPage from "./pages/UserPage";
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,  // animation duration in ms
+      offset: 200,
+    })
+  }, [])
   return (
     <Router>
       <Nav />
