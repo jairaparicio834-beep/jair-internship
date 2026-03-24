@@ -17,7 +17,7 @@ const UserPageSkeleton = () => {
                             <Skeleton width='180px' height='180px' />
                         </figure>
                         <Skeleton width="160px" height="28px" borderRadius="4px" />     {/* name */}
-                        <div className="user-info__details">
+                        <div className="user-info__details" style={{ marginTop: '16px' }}>
                             <Skeleton width="130px" height="18px" borderRadius="4px" />   {/* wallet */}
                             <Skeleton width="150px" height="18px" borderRadius="4px" />   {/* joined date */}
                         </div>
