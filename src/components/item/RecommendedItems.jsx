@@ -8,8 +8,10 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import RecommendedItemsSkeleton from "../ui/RecommendedItemsSkeleton";
 export default function RecommendedItems({ collectionId, id }) {
   const [items, setItems] = useState([])
+  const [loading, setLoading] = useState(true)
   async function fetchRecommendedItems() {
     if (!collectionId) return;
     const { data } = await axios.get(
@@ -17,15 +19,21 @@ export default function RecommendedItems({ collectionId, id }) {
     );
     const itemData = data.data.items;
     setItems(itemData);
+    setLoading(false)
+
 
   }
   useEffect(() => {
+    setLoading(true)
     fetchRecommendedItems()
   }, [collectionId])
 
+  if (loading) return <RecommendedItemsSkeleton />
+
   return (
+
     <section id="recommended-items">
-      <div className="container">
+      < div className="container" >
         <div className="row recommended-items__row">
           <div className="recommended-items__wrapper">
             <div className="recommended-items__header">
@@ -95,7 +103,8 @@ export default function RecommendedItems({ collectionId, id }) {
           </div>
 
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
+
   );
 }

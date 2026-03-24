@@ -1034,7 +1034,6 @@ footer {
 .item__img__wrapper {
   width: 100%;
   overflow: hidden;
-  aspect-ratio: 1 / 1;
 }
 
 .item__img {
@@ -1379,10 +1378,12 @@ ITEM PAGE
 }
 
 .recommended-items__wrapper {
+  width: 100%; 
   border-radius: 10px;
   border: 1px solid rgba(18, 18, 18, 0.12);
   background: rgb(253, 253, 253);
   overflow: hidden;
+  width: 100%;
 }
 
 .recommended-items__header,
@@ -1405,10 +1406,8 @@ ITEM PAGE
 }
 
 .recommended-items__body {
-  display: flex;
-  gap: 16px;
+  padding: 20px 0; 
   border-bottom: 1px solid rgba(18, 18, 18, 0.12);
-  flex-wrap: wrap;
 }
 
 .recommended-items__footer {

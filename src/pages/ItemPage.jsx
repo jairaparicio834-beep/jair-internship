@@ -11,7 +11,6 @@ import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import ItemPageSkeleton from "../components/ui/ItemPageSkeleton";
-import RecommendedItemsSkeleton from "../components/ui/RecommendedItemsSkeleton";
 export default function ItemPage() {
   const [post, setPost] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -62,10 +61,7 @@ export default function ItemPage() {
   return (
     <>
       {loading ?
-        <>
-          <ItemPageSkeleton />
-          <RecommendedItemsSkeleton />
-        </>
+        <ItemPageSkeleton />
         :
         <>
           <section id="item-info">

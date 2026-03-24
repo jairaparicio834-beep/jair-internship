@@ -34,8 +34,8 @@ const ItemPageSkeleton = () => {
 
                                 <Skeleton width="100px" height="16px" borderRadius="4px" />  {/* Current price */}
 
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                    <Skeleton width="80px" height="44px" borderRadius="4px" />  {/* 2 ETH */}
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '10px 0' }}>
+                                    <Skeleton width="80px" height="24px" borderRadius="4px" />  {/* 2 ETH */}
                                     <Skeleton width="60px" height="24px" borderRadius="4px" />  {/* $7521 */}
                                 </div>
 

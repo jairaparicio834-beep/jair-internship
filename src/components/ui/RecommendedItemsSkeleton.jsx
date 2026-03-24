@@ -23,6 +23,7 @@ const RecommendedItemsSkeleton = () => {
                                     navigation={true}
                                     loop={true}
                                     spaceBetween={16}
+                                    slidesPerView={1}
                                     breakpoints={{
                                         480: { slidesPerView: 1 },
                                         640: { slidesPerView: 2 },
@@ -36,18 +37,22 @@ const RecommendedItemsSkeleton = () => {
                                         <SwiperSlide key={index}>
                                             <div className="item">
                                                 <figure className="item__img__wrapper">
-                                                    <Skeleton width="100%" height="210px" borderRadius="12px" />
+                                                    <Skeleton width="100%" height="210px" />
                                                 </figure>
                                                 <div className="item__details">
-                                                    <div style={{ marginBottom: "6px" }}>
+                                                    <div>
                                                         <Skeleton width="70px" height="14px" borderRadius="4px" />
                                                     </div>
-                                                    <div style={{ marginBottom: "6px" }}>
-                                                        <Skeleton width="110px" height="18px" borderRadius="4px" />
+                                                    <div>
+                                                        <Skeleton width="100px" height="14px" borderRadius="4px" />
                                                     </div>
                                                     <div>
-                                                        <Skeleton width="140px" height="13px" borderRadius="4px" />
+                                                        <Skeleton width="120px" height="14px" borderRadius="4px" />
                                                     </div>
+                                                </div>
+                                                {/* 👇 add this */}
+                                                <div className="item__see-more">
+                                                    <Skeleton width="100%" height="36px" borderRadius="8px" />
                                                 </div>
                                             </div>
                                         </SwiperSlide>
@@ -61,7 +66,7 @@ const RecommendedItemsSkeleton = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
         </>
     );

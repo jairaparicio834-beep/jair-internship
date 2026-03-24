@@ -13,8 +13,8 @@ const UserPageSkeleton = () => {
             <section id="user-info">
                 <div className="row">
                     <div className="user-info__wrapper">
-                        <figure className="user-info__img__wrapper">
-
+                        <figure className="user-info__img__wrapper" style={{ marginBottom: '20px' }}>
+                            <Skeleton width='180px' height='180px' />
                         </figure>
                         <Skeleton width="160px" height="28px" borderRadius="4px" />     {/* name */}
                         <div className="user-info__details">
