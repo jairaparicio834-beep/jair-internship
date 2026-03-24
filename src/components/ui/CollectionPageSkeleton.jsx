@@ -39,7 +39,7 @@ const CollectionPageSkeleton = () => {
                             <div className="item-column" key={i}>
                                 <div className="item">
                                     <figure className="item__img__wrapper">
-                                        <Skeleton width="100%" height="100%" borderRadius={0} />
+                                        <Skeleton width="100%" height="300px" />
                                     </figure>
                                     <div className="item__details">
                                         <Skeleton width="65%" height={14} borderRadius={4} />
