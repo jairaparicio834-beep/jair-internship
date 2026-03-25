@@ -132,8 +132,14 @@ export default function ItemPage() {
                   <div className="item-page__sale">
                     <div className="item-page__sale__header">
                       <div className="green-pulse"></div>
-                      <span>{timeLeft
-                        ? `Sale ends in ${pad(timeLeft?.hours)}h ${pad(timeLeft?.minutes)}m ${pad(timeLeft?.seconds)}s` : 'Sale is over'
+                      <span>{typeof timeLeft === 'string'
+                        ? timeLeft
+                        : timeLeft && (
+                          `Sale ends in ${timeLeft.hours > 0 ? `${pad(timeLeft.hours)}h ` : ''
+                          }${timeLeft.minutes > 0 ? `${pad(timeLeft.minutes)}m ` : ''
+                          }${timeLeft.seconds > 0 ? `${pad(timeLeft.seconds)}s` : ''
+                          }`
+                        )
                       }</span>
                     </div>
                     <div className="item-page__sale__body">
@@ -164,10 +170,12 @@ export default function ItemPage() {
               </div>
             </div>
           </section>
-
-          <RecommendedItems collectionId={post?.collectionId} id={post?.id} />
         </>
       }
+
+
+      <RecommendedItems collectionId={post?.collectionId} id={post?.id} />
+
     </>
   );
 }

@@ -13,9 +13,8 @@ const RecommendedItemsSkeleton = () => {
                     <div className="row recommended-items__row">
                         <div className="recommended-items__wrapper">
                             <div className="recommended-items__header">
-                                <Skeleton width='260px' height='30px' borderRadius="12px" />
-                                <h3 className="recommended-items__header__title">
-                                </h3>
+                                <Skeleton width='24px' height='24px' borderRadius="4px" />
+                                <Skeleton width='220px' height='24px' borderRadius="6px" />
                             </div>
                             <div className="recommended-items__body">
                                 <Swiper
@@ -33,26 +32,16 @@ const RecommendedItemsSkeleton = () => {
                                         1280: { slidesPerView: 6 },
                                     }}
                                 >
-                                    {new Array(10).fill(0).map((_, index) => (
+                                    {Array.from({ length: 6 }).map((_, index) => (
                                         <SwiperSlide key={index}>
-                                            <div className="item">
-                                                <figure className="item__img__wrapper">
-                                                    <Skeleton width="100%" height="210px" />
+                                            <div className="item" style={{ pointerEvents: 'none' }}>
+                                                <figure className="item__img__wrapper" style={{ aspectRatio: '1 / 1' }}>
+                                                    <Skeleton width="100%" height="100%" />
                                                 </figure>
                                                 <div className="item__details">
-                                                    <div>
-                                                        <Skeleton width="70px" height="14px" borderRadius="4px" />
-                                                    </div>
-                                                    <div>
-                                                        <Skeleton width="100px" height="14px" borderRadius="4px" />
-                                                    </div>
-                                                    <div>
-                                                        <Skeleton width="120px" height="14px" borderRadius="4px" />
-                                                    </div>
-                                                </div>
-                                                {/* 👇 add this */}
-                                                <div className="item__see-more">
-                                                    <Skeleton width="100%" height="36px" borderRadius="8px" />
+                                                    <Skeleton width="80px" height="14px" borderRadius="4px" />
+                                                    <Skeleton width="60px" height="14px" borderRadius="4px" />
+                                                    <Skeleton width="110px" height="14px" borderRadius="4px" />
                                                 </div>
                                             </div>
                                         </SwiperSlide>
@@ -60,14 +49,12 @@ const RecommendedItemsSkeleton = () => {
                                 </Swiper>
                             </div>
                             <div className="recommended-items__footer">
-                                <Skeleton width="160px" height="44px" borderRadius="8px" />
+                                <Skeleton width="160px" height="44px" borderRadius="12px" />
                             </div>
-
                         </div>
                     </div>
                 </div>
-            </section >
-
+            </section>
         </>
     );
 }

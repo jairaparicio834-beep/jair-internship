@@ -583,6 +583,10 @@ html {
   font-weight: 600;
   line-height: 24px;
 }
+.swiper{
+  width: 100%;
+  min-height: 100%;
+}
 
 .swiper-button-next,
 .swiper-button-prev {

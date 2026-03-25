@@ -21,7 +21,7 @@ const Card = ({ collection }) => {
                             <span className="collection__stat__label">
                                 Total Volume
                             </span>
-                            <span className="collection__stat__data">{collection.totalVolume}K ETH</span>
+                            <span className="collection__stat__data">{collection.totalVolume} ETH</span>
                         </div>
                     </div>
                 </div>
