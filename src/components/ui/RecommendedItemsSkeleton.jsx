@@ -38,7 +38,7 @@ const RecommendedItemsSkeleton = () => {
                                                 <figure className="item__img__wrapper" style={{ aspectRatio: '1 / 1' }}>
                                                     <Skeleton width="100%" height="100%" />
                                                 </figure>
-                                                <div className="item__details">
+                                                <div className="item__details" style={{ gap: '14px' }}>
                                                     <Skeleton width="80px" height="14px" borderRadius="4px" />
                                                     <Skeleton width="60px" height="14px" borderRadius="4px" />
                                                     <Skeleton width="110px" height="14px" borderRadius="4px" />
